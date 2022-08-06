@@ -1,4 +1,4 @@
-package com.example.android.mikmok.data.request
+package com.moataz.weather.data.request
 
 import com.moataz.weather.utils.Constants
 import okhttp3.Call

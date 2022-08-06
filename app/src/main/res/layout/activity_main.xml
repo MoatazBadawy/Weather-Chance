@@ -9,6 +9,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:contentDescription="@string/cairo_tower_background"
         android:scaleType="centerCrop"
         android:src="@drawable/background"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,41 +18,41 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/description_txv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
-        tools:text="Clear sky"
         android:textColor="@color/white"
         android:textSize="42sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Clear sky" />
 
     <TextView
-        android:id="@+id/textViedw"
+        android:id="@+id/city_name_txv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
-        android:text="Cairo"
+        android:text="@string/city_name"
         android:textColor="@color/white"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/description_txv" />
 
     <TextView
         android:id="@+id/tem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        tools:text="35 °C"
         android:textColor="@color/white"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViedw" />
+        app:layout_constraintTop_toBottomOf="@+id/city_name_txv"
+        tools:text="35 °C" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -70,12 +71,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="-5dp"
-        tools:text="16:46"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:text="16:46" />
 
     <ImageView
         android:id="@+id/wind"
@@ -92,13 +93,13 @@
         android:id="@+id/wind_speed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="5.1"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/sunset"
         app:layout_constraintEnd_toEndOf="@+id/wind"
         app:layout_constraintStart_toStartOf="@+id/wind"
-        app:layout_constraintTop_toBottomOf="@+id/wind" />
+        app:layout_constraintTop_toBottomOf="@+id/wind"
+        tools:text="5.1" />
 
     <ImageView
         android:id="@+id/r"
@@ -115,10 +116,10 @@
         android:id="@+id/rh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="40"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/r"
         app:layout_constraintStart_toStartOf="@+id/r"
-        app:layout_constraintTop_toBottomOf="@+id/r" />
+        app:layout_constraintTop_toBottomOf="@+id/r"
+        tools:text="40" />
 </androidx.constraintlayout.widget.ConstraintLayout>

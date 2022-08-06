@@ -3,9 +3,9 @@ package com.moataz.weather.ui
 import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.android.mikmok.data.request.ApiClient
 import com.google.gson.Gson
 import com.moataz.weather.data.model.WeatherResponse
+import com.moataz.weather.data.request.ApiClient
 import com.moataz.weather.databinding.ActivityMainBinding
 import okhttp3.Call
 import okhttp3.Callback
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
                 response.body?.string().let { jsonString ->
                     val result = Gson().fromJson(jsonString, WeatherResponse::class.java)
                     runOnUiThread {
-                        binding.textView.text = result.data[0].weather.description
+                        binding.descriptionTxv.text = result.data[0].weather.description
                         binding.tem.text = "${result.data[0].temp} °C"
                         binding.sunset.text = result.data[0].sunset
                         binding.windSpeed.text = result.data[0].wind_spd.toString()

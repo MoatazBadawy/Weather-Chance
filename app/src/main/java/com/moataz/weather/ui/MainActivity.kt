@@ -37,8 +37,8 @@ class MainActivity : AppCompatActivity() {
                         binding.descriptionTxv.text = result.data[0].weather.description
                         binding.tem.text = "${result.data[0].temp} °C"
                         binding.sunset.text = result.data[0].sunset
-                        binding.windSpeed.text = result.data[0].wind_spd.toString()
-                        binding.rh.text = result.data[0].rh.toString()
+                        binding.windSpeed.text = result.data[0].wind_spd.toInt().toString()
+                        binding.rh.text = result.data[0].rh.toInt().toString()
                     }
                 }
             }

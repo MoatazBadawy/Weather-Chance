@@ -1,10 +1,7 @@
 package com.moataz.weather.data.request
 
-sealed class NetworkResult<T>(
-    val data: T? = null,
-    val message: String? = null
-){
-    class Success<T>(data: T) : NetworkResult<T>(data)
-    class Failure<T>(message: String, data: T? = null) : NetworkResult<T>(data, message)
+sealed class NetworkResult<T>{
+    class Success<T>(val transferredData: T) : NetworkResult<T>()
+    class Failure<T>(message: String) : NetworkResult<T>()
     class Loading<T> : NetworkResult<T>()
 }

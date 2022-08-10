@@ -52,5 +52,6 @@ dependencies {
     // gson for Kotlin to parse JSON responses from the server
     implementation 'com.google.code.gson:gson:2.9.0'
 
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
     implementation "io.reactivex.rxjava3:rxjava:3.1.5"
 }

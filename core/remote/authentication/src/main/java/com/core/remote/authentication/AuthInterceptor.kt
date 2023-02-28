@@ -17,6 +17,6 @@ class AuthInterceptor @Inject constructor() : Interceptor {
     }
 
     companion object {
-        private const val API_KEY_WEATHER = "Key"
+        private const val API_KEY_WEATHER = "key"
     }
 }

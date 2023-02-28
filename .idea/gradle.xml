@@ -11,6 +11,24 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/core/remote" />
+            <option value="$PROJECT_DIR$/core/remote/authentication" />
+            <option value="$PROJECT_DIR$/core/remote/response" />
+            <option value="$PROJECT_DIR$/core/remote/response/dto" />
+            <option value="$PROJECT_DIR$/core/remote/service" />
+            <option value="$PROJECT_DIR$/data" />
+            <option value="$PROJECT_DIR$/data/repository" />
+            <option value="$PROJECT_DIR$/domain" />
+            <option value="$PROJECT_DIR$/domain/entity" />
+            <option value="$PROJECT_DIR$/domain/mapper" />
+            <option value="$PROJECT_DIR$/domain/repository" />
+            <option value="$PROJECT_DIR$/domain/usecase" />
+            <option value="$PROJECT_DIR$/ui" />
+            <option value="$PROJECT_DIR$/ui/mapper" />
+            <option value="$PROJECT_DIR$/ui/uistate" />
+            <option value="$PROJECT_DIR$/ui/view" />
+            <option value="$PROJECT_DIR$/ui/viewmodel" />
           </set>
         </option>
       </GradleProjectSettings>

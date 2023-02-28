@@ -14,3 +14,15 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Weather Chance"
 include ':app'
+include ':core:remote:response:dto'
+include ':core:remote:service'
+include ':data:repository'
+include ':domain:mapper'
+include ':domain:entity'
+include ':domain:usecase'
+include ':domain:repository'
+include ':ui:viewmodel'
+include ':ui:uistate'
+include ':ui:mapper'
+include ':ui:view'
+include ':core:remote:authentication'

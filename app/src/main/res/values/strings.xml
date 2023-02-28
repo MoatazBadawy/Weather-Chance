@@ -1,5 +1,3 @@
 <resources>
     <string name="app_name">Weather Chance</string>
-    <string name="city_name">Cairo</string>
-    <string name="cairo_tower_background">Cairo Tower background</string>
 </resources>

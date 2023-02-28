@@ -13,6 +13,7 @@ import com.moataz.weather.R
 import com.moataz.weather.databinding.ActivityMainBinding
 import com.suddenh4x.ratingdialog.AppRating
 import com.suddenh4x.ratingdialog.preferences.RatingThreshold
+import com.ui.view.fragment.WeatherFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

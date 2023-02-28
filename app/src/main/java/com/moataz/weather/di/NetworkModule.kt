@@ -21,22 +21,14 @@ object NetworkModule {
     @Singleton
     @Provides
     fun provideOkHttpClient(
-        authInterceptor: AuthInterceptor,
-        httpLoggingInterceptor: HttpLoggingInterceptor
+        authInterceptor: AuthInterceptor
     ): OkHttpClient {
         val builder = OkHttpClient()
             .newBuilder()
             .addInterceptor(authInterceptor)
-            .addInterceptor(httpLoggingInterceptor)
             .callTimeout(30, TimeUnit.SECONDS)
             .connectTimeout(30, TimeUnit.SECONDS)
         return builder.build()
-    }
-
-    @Singleton
-    @Provides
-    fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {
-        return HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
     }
 
     @Singleton

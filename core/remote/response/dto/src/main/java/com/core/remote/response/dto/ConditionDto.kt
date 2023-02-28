@@ -2,11 +2,11 @@ package com.core.remote.response.dto
 
 import com.google.gson.annotations.SerializedName
 
-data class WeatherDto(
+data class ConditionDto(
+    @SerializedName("text")
+    val text: String?,
     @SerializedName("code")
-    val code: Int,
-    @SerializedName("description")
-    val description: String,
+    val code: Int?,
     @SerializedName("icon")
-    val icon: String
+    val icon: String?
 )

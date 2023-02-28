@@ -1,4 +1,4 @@
-package com.domain.entity
+package com.domain.model
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.domain.entity.test", appContext.packageName)
+        assertEquals("com.domain.model.test", appContext.packageName)
     }
 }

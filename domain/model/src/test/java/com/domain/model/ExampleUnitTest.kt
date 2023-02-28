@@ -1,4 +1,4 @@
-package com.domain.entity
+package com.domain.model
 
 import org.junit.Test
 

@@ -2,7 +2,7 @@ package com.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.domain.usecase.GetCurrentWeatherByLatLonUseCase
+import com.domain.usecase.WeatherUseCase
 import com.ui.mapper.toCurrentWeatherUiState
 import com.ui.uistate.WeatherMainUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class WeatherViewModel @Inject constructor(
-    val getCurrentWeatherByLatLonUseCase: GetCurrentWeatherByLatLonUseCase
+    private val getWeatherUseCase: WeatherUseCase
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(WeatherMainUiState())
@@ -29,19 +29,16 @@ class WeatherViewModel @Inject constructor(
             try {
                 _state.update { state ->
                     state.copy(
-                        currentWeather = getCurrentWeatherByLatLonUseCase(
-                            lat = 30.0444,
-                            lon = 31.2357
-                        ).map { currentWeather ->
-                            currentWeather.toCurrentWeatherUiState()
-                        },
+                        currentWeather = getWeatherUseCase(
+                            "cairo"
+                        ).toCurrentWeatherUiState(),
                         isLoading = false,
                         isSuccessful = true
                     )
                 }
             } catch (e: Exception) {
                 _state.value = WeatherMainUiState(
-                    currentWeather = emptyList(),
+                    currentWeather = null,
                     isError = true,
                     isLoading = false,
                     isSuccessful = false

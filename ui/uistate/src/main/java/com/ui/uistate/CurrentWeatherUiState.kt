@@ -6,5 +6,5 @@ data class CurrentWeatherUiState(
     val weather: String = "",
     val sunset: String = "",
     val windSpeed: String = "",
-    val humidity: String = "",
+    val humidity: String = ""
 )

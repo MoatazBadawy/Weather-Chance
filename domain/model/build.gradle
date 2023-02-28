@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.domain.entity'
+    namespace 'com.domain.model'
     compileSdk 33
 
     defaultConfig {
@@ -16,8 +16,8 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {

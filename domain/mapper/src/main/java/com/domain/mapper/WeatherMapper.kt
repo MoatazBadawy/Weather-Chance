@@ -1,53 +1,67 @@
 package com.domain.mapper
 
-import com.core.remote.response.dto.CurrentWeatherDto
-import com.core.remote.response.dto.WeatherDto
-import com.domain.entity.CurrentWeather
-import com.domain.entity.Weather
+import com.core.remote.response.dto.ConditionDto
+import com.core.remote.response.dto.CurrentDto
+import com.core.remote.response.dto.LocationDto
+import com.core.remote.response.dto.WeatherResponseDto
+import com.domain.model.Condition
+import com.domain.model.Current
+import com.domain.model.Location
+import com.domain.model.Weather
 
-fun WeatherDto.toWeather(): Weather {
+
+fun WeatherResponseDto.toWeather(): Weather {
     return Weather(
-        code = code, description = description, icon = icon
+        location = locationDto.toLocation(),
+        current = currentDto.toCurrent()
     )
 }
 
-fun CurrentWeatherDto.toCurrentWeather(): CurrentWeather {
-    return CurrentWeather(
-        appTemp = appTemp,
-        aqi = aqi,
+fun LocationDto.toLocation(): Location {
+    return Location(
         cityName = cityName,
-        clouds = clouds,
-        countryCode = countryCode,
-        dateTime = dateTime,
-        dewpt = dewpt,
-        dhi = dhi,
-        dni = dni,
-        elevAngle = elevAngle,
-        ghi = ghi,
-        hAngle = hAngle,
-        latitude = latitude,
-        longitude = longitude,
-        obTime = obTime,
-        pod = pod,
-        precip = precip,
-        pres = pres,
-        rh = rh,
-        slp = slp,
-        snow = snow,
-        solarRad = solarRad,
-        stateCode = stateCode,
-        station = station,
-        sunrise = sunrise,
-        sunset = sunset,
-        temp = temp,
-        timezone = timezone,
-        ts = ts,
-        uv = uv,
-        vis = vis,
-        weather = weather.toWeather(),
-        windCdir = windCdir,
-        windCdirFull = windCdirFull,
+        country = country,
+        region = region,
+        lat = lat,
+        lon = lon,
+        timeZoneId = timeZoneId,
+        localtimeEpoch = localtimeEpoch,
+        localtime = localtime
+    )
+}
+
+fun CurrentDto.toCurrent(): Current {
+    return Current(
+        condition = conditionDto?.toCondition(),
+        tempC = tempC?.toDouble(),
+        tempF = tempF,
+        isDay = isDay,
+        windMph = windMph,
+        windKph = windKph,
+        windDegree = windDegree,
         windDir = windDir,
-        windSpd = windSpd
+        pressureMb = pressureMb?.toDouble(),
+        pressureIn = pressureIn?.toDouble(),
+        precipMm = precipMm?.toDouble(),
+        precipIn = precipIn?.toDouble(),
+        humidity = humidity,
+        cloud = cloud,
+        feelslikeC = feelslikeC,
+        feelslikeF = feelslikeF,
+        visKm = visKm?.toDouble(),
+        visMiles = visMiles?.toDouble(),
+        uv = uv?.toDouble(),
+        gustMph = gustMph,
+        gustKph = gustKph,
+        lastUpdated = lastUpdated,
+        lastUpdatedEpoch = lastUpdatedEpoch
+    )
+}
+
+fun ConditionDto.toCondition(): Condition {
+    return Condition(
+        text = text,
+        code = code,
+        icon = icon
     )
 }
